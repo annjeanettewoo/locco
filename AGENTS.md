@@ -2,7 +2,7 @@
 
 ## Project
 
-Dora Food Map is a Singapore social food map MVP. Build around the product promise: food near where the user is going, filtered by people whose taste they trust.
+Locco is a Singapore social food map MVP. Build around the product promise: food near where the user is going, filtered by people whose taste they trust.
 
 ## Working Rules
 

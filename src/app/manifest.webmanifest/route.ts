@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 
 export function GET() {
   return NextResponse.json({
-    name: "Dora Food Map",
-    short_name: "Dora",
+    name: "Locco",
+    short_name: "Locco",
     description: "Singapore social food map for trusted lists.",
     start_url: "/app/map",
     display: "standalone",

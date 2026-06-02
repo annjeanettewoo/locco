@@ -17,7 +17,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       >
         <div className="mx-auto flex max-w-5xl items-center justify-between">
           <Link href="/app/map" className={`${isMapPage ? "text-base" : "text-lg"} font-black text-ink`}>
-            Dora
+            Locco
           </Link>
           <div className="rounded-full bg-white px-3 py-1 text-xs font-bold text-stone-600 shadow-sm">
             Mock auth

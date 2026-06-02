@@ -9,7 +9,7 @@ export default function LandingPage() {
             Singapore food plans, filtered by people you trust
           </p>
           <h1 className="text-5xl font-black tracking-normal text-ink sm:text-6xl">
-            Dora Food Map
+            Locco
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-stone-700">
             Find food near where you are going, but only from friends whose taste you already trust.

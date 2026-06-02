@@ -2,7 +2,7 @@
 
 ## What Changed
 
-This pass refactored the Dora map UI from a dashboard-style overlay into a mobile-first map experience. The map is now the primary full-screen surface, with compact floating controls and bottom drawers for secondary actions.
+This pass refactored the Locco map UI from a dashboard-style overlay into a mobile-first map experience. The map is now the primary full-screen surface, with compact floating controls and bottom drawers for secondary actions.
 
 Latest focused update: `/app/map` now has a compact floating Home / Map / Lists navigation pill so users can leave the full-screen map without restoring the larger bottom navigation.
 
@@ -42,7 +42,7 @@ Supabase foundation update: the project now includes Supabase client factories, 
 - Floating search bar near the top
 - Compact list count button
 - Small selected-list chips
-- Bottom floating `Ask Dora` and `Add` buttons
+- Bottom floating `Ask Locco` and `Add` buttons
 - Compact floating Home / Map / Lists navigation pill
 - Place details only when a pin is tapped
 
@@ -56,7 +56,7 @@ The normal app bottom nav remains hidden on `/app/map` to preserve the full-scre
 - `Map` links to `/app/map` and is visually active
 - `Lists` links to `/app/lists`
 
-The `Ask Dora` and `Add` controls were moved upward so they do not overlap with this navigation. The `5 lists` button remains only for filtering visible map pins, not for navigating to the Lists page.
+The `Ask Locco` and `Add` controls were moved upward so they do not overlap with this navigation. The `5 lists` button remains only for filtering visible map pins, not for navigating to the Lists page.
 
 ## List Drawer
 
@@ -72,7 +72,7 @@ The map prevents deselecting every list, so the user is never left with a blank 
 
 ## Chat Drawer
 
-The chatbot is collapsed by default. The map shows only an `Ask Dora` bottom pill. Tapping it opens a bottom sheet with:
+The chatbot is collapsed by default. The map shows only an `Ask Locco` bottom pill. Tapping it opens a bottom sheet with:
 
 - Example prompt
 - Query input
@@ -123,7 +123,7 @@ This keeps the app working without Supabase credentials while giving the next pa
 4. Tap the `5 lists` button and toggle one or more lists.
 5. Confirm map pins update and selected-list chips change.
 6. Search for `Orchard MRT` and select a result.
-7. Tap `Ask Dora`, ask `dessert near Orchard MRT`, and select a result.
+7. Tap `Ask Locco`, ask `dessert near Orchard MRT`, and select a result.
 8. Tap a map pin and confirm the place bottom sheet is scrollable.
 9. Tap the bottom `Home`, `Map`, and `Lists` navigation pill links.
 10. Confirm `Map` is visually active while on `/app/map`.
@@ -136,7 +136,7 @@ This keeps the app working without Supabase credentials while giving the next pa
 ## Known Limitations
 
 - Add-place saves are still local state only.
-- Ask Dora is still rule-based and keyword-driven.
+- Ask Locco is still rule-based and keyword-driven.
 - The map uses OpenStreetMap raster tiles for a no-key MVP.
 - The list filter is represented in the URL only on initial page load.
 - The compact map navigation is intentionally separate from the full app bottom nav, so nav styling is duplicated lightly for now.

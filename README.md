@@ -1,6 +1,6 @@
-# Dora Food Map
+# Locco
 
-Dora is a Singapore-focused social food map MVP. The core idea is: show me food near where I am going, but only from people whose taste I trust.
+Locco is a Singapore-focused social food map MVP. The core idea is: show me food near where I am going, but only from people whose taste I trust.
 
 ## What It Does
 

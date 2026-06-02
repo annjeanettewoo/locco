@@ -154,7 +154,7 @@ export function FoodMapApp({ initialSelectedListIds }: Props) {
           onClick={() => setIsChatOpen(true)}
           className="rounded-full bg-tomato px-5 py-3 text-sm font-black text-white shadow-soft"
         >
-          Ask Dora
+          Ask Locco
         </button>
         <button
           type="button"
@@ -193,14 +193,14 @@ export function FoodMapApp({ initialSelectedListIds }: Props) {
           >
             <div className="mb-3 flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-wide text-tomato">Ask Dora</p>
+                <p className="text-xs font-bold uppercase tracking-wide text-tomato">Ask Locco</p>
                 <h2 className="text-xl font-black text-ink">Find food from selected lists</h2>
               </div>
               <button
                 type="button"
                 onClick={() => setIsChatOpen(false)}
                 className="rounded-full bg-stone-100 px-3 py-2 text-sm font-black text-stone-600"
-                aria-label="Close Ask Dora"
+                aria-label="Close Ask Locco"
               >
                 X
               </button>
