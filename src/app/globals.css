@@ -1,0 +1,34 @@
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #fff8ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff8ef;
+  color: #231f20;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.maplibregl-ctrl-bottom-left,
+.maplibregl-ctrl-bottom-right {
+  margin-bottom: 92px;
+}
+
+.bottom-sheet-scroll {
+  scrollbar-width: thin;
+}
