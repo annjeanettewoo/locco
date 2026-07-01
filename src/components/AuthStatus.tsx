@@ -10,6 +10,7 @@ export function AuthStatus() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [isSigningOut, setIsSigningOut] = useState(false);
+  const [isProfileReady, setIsProfileReady] = useState(false);
   const supabase = useMemo(() => createBrowserSupabaseAuthClient(), []);
 
   useEffect(() => {
@@ -40,6 +41,30 @@ export function AuthStatus() {
     };
   }, [router, supabase]);
 
+  useEffect(() => {
+    if (!isSignedIn) {
+      setIsProfileReady(false);
+      return;
+    }
+
+    let isMounted = true;
+
+    fetch("/api/auth/profile/ensure", { method: "POST" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: { profileReady?: boolean } | null) => {
+        if (!isMounted) return;
+        setIsProfileReady(Boolean(data?.profileReady));
+      })
+      .catch(() => {
+        if (!isMounted) return;
+        setIsProfileReady(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [isSignedIn]);
+
   async function handleSignOut() {
     if (!supabase) return;
 
@@ -63,7 +88,7 @@ export function AuthStatus() {
   if (isSignedIn) {
     return (
       <div className="flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-bold text-stone-600 shadow-sm">
-        <span>Signed in</span>
+        <span>{isProfileReady ? "Profile ready" : "Signed in"}</span>
         <button
           type="button"
           onClick={handleSignOut}
