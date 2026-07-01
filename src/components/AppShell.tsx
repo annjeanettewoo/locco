@@ -2,10 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AuthStatus } from "@/components/AuthStatus";
 import { BottomNav } from "@/components/BottomNav";
 import Image from "next/image";
 
-export function AppShell({ children }: { children: React.ReactNode }) {
+export function AppShell({
+  children,
+  showDataFallbackWarning = false
+}: {
+  children: React.ReactNode;
+  showDataFallbackWarning?: boolean;
+}) {
   const pathname = usePathname();
   const isMapPage = pathname === "/app/map";
 
@@ -34,11 +41,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <span>Locco</span>
           </Link>
 
-          <div className="rounded-full bg-white px-3 py-1 text-xs font-bold text-stone-600 shadow-sm">
-            Mock auth
-          </div>
+          <AuthStatus />
         </div>
       </header>
+
+      {showDataFallbackWarning ? (
+        <div className="bg-amber-100 px-4 py-2 text-center text-xs font-bold text-amber-900">
+          Using mock data - Supabase read failed
+        </div>
+      ) : null}
 
       {children}
       {isMapPage ? null : <BottomNav />}

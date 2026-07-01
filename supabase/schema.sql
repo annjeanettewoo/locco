@@ -102,6 +102,8 @@ grant select on table
   place_sources
 to anon, authenticated;
 
+grant insert, update on table profiles to authenticated;
+
 alter table profiles enable row level security;
 alter table food_lists enable row level security;
 alter table places enable row level security;
@@ -116,6 +118,28 @@ on profiles
 for select
 to anon, authenticated
 using (true);
+
+drop policy if exists "Users can read their own profile" on profiles;
+create policy "Users can read their own profile"
+on profiles
+for select
+to authenticated
+using (id = auth.uid());
+
+drop policy if exists "Users can insert their own profile" on profiles;
+create policy "Users can insert their own profile"
+on profiles
+for insert
+to authenticated
+with check (id = auth.uid());
+
+drop policy if exists "Users can update their own profile" on profiles;
+create policy "Users can update their own profile"
+on profiles
+for update
+to authenticated
+using (id = auth.uid())
+with check (id = auth.uid());
 
 drop policy if exists "Demo food lists are readable" on food_lists;
 create policy "Demo food lists are readable"
