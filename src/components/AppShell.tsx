@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AuthStatus } from "@/components/AuthStatus";
 import { BottomNav } from "@/components/BottomNav";
 import Image from "next/image";
 
@@ -40,9 +41,7 @@ export function AppShell({
             <span>Locco</span>
           </Link>
 
-          <div className="rounded-full bg-white px-3 py-1 text-xs font-bold text-stone-600 shadow-sm">
-            Mock auth
-          </div>
+          <AuthStatus />
         </div>
       </header>
 
