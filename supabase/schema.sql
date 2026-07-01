@@ -102,6 +102,8 @@ grant select on table
   place_sources
 to anon, authenticated;
 
+grant insert, update on table profiles to authenticated;
+
 alter table profiles enable row level security;
 alter table food_lists enable row level security;
 alter table places enable row level security;
